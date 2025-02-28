@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('job_type_id')->nullable()->constrained('job_types')->onDelete('set null');
             $table->foreignId('experience_id')->nullable()->constrained('experiences')->onDelete('set null');
             $table->string('title', 255);
+            $table->string('slug', 255)->unique();
             $table->text('description')->nullable();
             
             $table->foreignId('country_id')->nullable()->constrained()->onDelete('set null'); // Country

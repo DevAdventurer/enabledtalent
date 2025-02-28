@@ -29,8 +29,9 @@
                                                 <tr>
                                                     <th>Si</th>
                                                     <th>Job Title</th>
-                                                    <th>Industry</th>
-                                                    <th>Date</th>
+                                                    <th>Category</th>
+                                                    <th>Create Date</th>
+                                                    <th>Deadline</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -72,11 +73,26 @@
             "columns": [
                 { "data": "sn" },
                 { "data": "title" },
-                { "data": "industry" },
-                { "data": "date" },
+                { "data": "category" },
+                { "data": "create_date" },
+                { "data": "deadline" },
                 { "data": "status" },
-                { "data": "action" },
-                ]
+                { "data": "action",
+                    render: function(data, type, row) {
+                        if (type === 'display') {
+                            var btn = '<div class="d-flex gap-2">';
+
+                            btn+='<a href="<?php echo e(route('company.jobs.edit', '')); ?>/'+row['id']+'" class="btn btn-outline-secondary btn-sm"><i class="far fa-pen"></i></a>';
+                            
+                            btn += '<a href="javascript:void(0)" onclick="deleteData(\'<?php echo e(route('company.jobs.destroy', '')); ?>/'+row['id']+'\')" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-can"></i></a>';
+                            btn += '</div>'
+                            
+                            return btn;
+                        }
+                        return ' ';
+                    },
+                },
+            ]
 
         });
 

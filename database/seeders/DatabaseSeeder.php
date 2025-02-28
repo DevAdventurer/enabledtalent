@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             StateSeeder::class,
             DistrictSeeder::class,
             CitySeeder::class,
+            ExperienceSeeder::class,
+            QualificationsTableSeeder::class,
         ]);
     }
 }

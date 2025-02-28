@@ -55,10 +55,13 @@ Route::middleware('company.auth')->group(function() {
 });
 
 Route::middleware(['company.auth', 'company.job.status'])->group(function() {
-    Route::controller(JobController::class)->name('jobs.')->group(function(){
-        Route::match(['get','patch'],'jobs', 'index')->name('index');
+    Route::controller(JobController::class)->name('jobs.')->prefix('jobs')->group(function(){
+        Route::match(['get','patch'],'list', 'index')->name('index');
         Route::get('create', 'create')->name('create');
         Route::post('store', 'store')->name('store');
+        Route::get('edit/{id}', 'edit')->name('edit');
+         Route::put('update/{id}', 'update')->name('update');
+        Route::delete('delete/{id}', 'destroy')->name('destroy');
     });
 });
 

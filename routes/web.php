@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Web\ComingSoonController;
 use App\Http\Controllers\Web\CommonController;
+use App\Http\Controllers\Web\JobListingController;
 use App\Http\Controllers\Web\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,17 @@ Route::controller(ComingSoonController::class)->name('web.')->group(function () 
     Route::get('common/qualification/list', 'qualificationList')->name('qualification.list');
 });
 
-Route::middleware(['web'])->controller(PageController::class)->name('web.')->group(function () {
-    Route::get('/', 'home')->name('home');
-    Route::get('sign-in', 'signin')->name('signin');
-    Route::get('page/{page}','page')->name('page');
+Route::middleware('company.auth')->name('web.')->group(function() {
+    Route::controller(PageController::class)->group(function () {
+        Route::get('/', 'home')->name('home');
+        Route::get('sign-in', 'signin')->name('signin');
+        Route::get('page/{page}','page')->name('page');
+    });
+
+    Route::controller(JobListingController::class)->name('job.')->prefix('job')->group(function () {
+        Route::get('/{job}', 'single')->name('single');
+        Route::get('category/{category}', 'category')->name('category');
+    });
+
 });
 
