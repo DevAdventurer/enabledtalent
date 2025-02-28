@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('job_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255)->nullable();
+            $table->string('slug', 255)->unique();
             $table->text('description')->nullable();
             $table->string('icon', 100)->nullable();
             $table->boolean('featured')->default(0);

@@ -7686,4 +7686,9 @@ ul.user-profile-sidebar-list li ul li:after {
 .paginate_button.page-item.disabled a{
   background: #999;
 }
-
+.image-box.job-company-logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: scale-down;
+    border: 1px solid #eee;
+}
