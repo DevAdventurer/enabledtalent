@@ -1,0 +1,16 @@
+<?php $__env->startPush('links'); ?>
+<?php $__env->stopPush(); ?>
+
+
+<?php $__env->startSection('main'); ?>
+       <?php $__currentLoopData = $page->pageItems; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $section): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php if(view()->exists("common.snippets.{$section->type}")): ?>
+                     <?php echo $__env->make("common.snippets.{$section->type}", ['content' => $section->content, 'section' => $section], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+              <?php endif; ?>
+       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+ <?php echo $__env->make('common.snippets.featured-job', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
+       
+        
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('common.layouts.master', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/mamoonnasar/Documents/enabledtalent/resources/views/web/home.blade.php ENDPATH**/ ?>

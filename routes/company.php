@@ -62,6 +62,6 @@ Route::middleware(['company.auth', 'company.job.status'])->group(function() {
     });
 });
 
-Route::fallback(function () {
-    return response()->view('admin.errors.404', [], 404);
-});
+// Route::fallback(function () {
+//     return response()->view('admin.errors.404', [], 404);
+// });

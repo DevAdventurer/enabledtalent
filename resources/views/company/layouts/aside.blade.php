@@ -16,7 +16,7 @@
                             </div>
                             <ul class="user-profile-sidebar-list">
                                 <li>
-                                  <a class="active" href="employer-dashboard.html"><i class="far fa-gauge-high"></i> Dashboard</a>
+                                  <a class="active" href="{{route('company.dashboard.index')}}"><i class="far fa-gauge-high"></i> Dashboard</a>
                                 </li>
 
                                 <li>

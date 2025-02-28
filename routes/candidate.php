@@ -2,6 +2,7 @@
 use App\Http\Controllers\Candidate\Auth\CandidateLoginController;
 use App\Http\Controllers\Candidate\Auth\CandidateRegisterController;
 use App\Http\Controllers\Candidate\DashboardController;
+use App\Http\Controllers\Candidate\CandidateController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -43,6 +44,11 @@ Route::middleware('candidate.auth')->group(function() {
 
     Route::controller(DashboardController::class)->name('dashboard.')->group(function(){
         Route::get('dashboard', 'index')->name('index');
+    });
+    Route::controller(CandidateController::class)->name('details.')->group(function(){
+        Route::get('details', 'detail')->name('detail');
+        Route::post('detail/store', 'detailStore')->name('detail.store');
+        Route::post('detail/contact', 'contactStore')->name('contact.store');
     });
 });
 

@@ -32,4 +32,10 @@ class Candidate extends Authenticatable
         $this->notify(new CompanyResetPasswordNotification($token));
     }
 
+    public function details()
+    {
+        return $this->hasOne(CandidateDetail::class, 'candidate_id', 'id');
+    }   
+
+
 }

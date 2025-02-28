@@ -13,15 +13,19 @@ return new class extends Migration
     {
         Schema::create('candidate_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('candidate_id')->constrained()->onDelete('cascade');
-            $table->string('website_url')->nullable();
-            $table->text('address')->nullable();
-            $table->integer('state_id')->nullable();
-            $table->integer('district_id')->nullable();
-            $table->integer('city_id')->nullable();
-            $table->string('locality', 255)->nullable();
-            $table->integer('pincode')->nullable();
-            $table->string('landmark', 255)->nullable();
+            $table->unsignedBigInteger('candidate_id')->unique(); 
+            $table->foreign('candidate_id')->references('id')->on('candidates')->onDelete('cascade');
+            $table->string('mobile')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('experience_level')->nullable();
+            $table->string('profile_picture')->nullable();
+            $table->string('address')->nullable();
+            $table->string('country_id')->nullable();
+            $table->string('state_id')->nullable();
+            $table->string('district_id')->nullable();
+            $table->string('city_id')->nullable();
+            $table->string('pincode')->nullable();
+            $table->integer('status_id')->default(15);
             $table->timestamps();
         });
     }

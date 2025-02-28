@@ -45,7 +45,7 @@ class CandidateRegisterController extends Controller
         
         if ($candidate->save()) {
             Auth::guard('candidate')->login($candidate); 
-
+            $candidate->details()->create();
             return response()->json([
                 'class' => 'bg-success',
                 'message' => 'Successfully Registered.',
@@ -93,7 +93,7 @@ class CandidateRegisterController extends Controller
             );
 
             Auth::guard('candidate')->login($candidate);
-
+            $candidate->details()->create();
             return redirect()->intended('candidate/dashboard');
         } catch (\Exception $e) {
             return redirect('/candidate/login')->withErrors(['msg' => 'Unable to login.']);
