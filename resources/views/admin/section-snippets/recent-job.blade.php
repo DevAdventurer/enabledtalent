@@ -1,10 +1,10 @@
-{{ html()->hidden('type', 'featured-job') }}
+{{ html()->hidden('type', 'recent-job') }}
 
 <div class="card" style="position:relative;">
     <div class="card-header">
         <div class="d-flex align-items-center justify-content-between">
             <div class="">
-                <h6 class="card-title mb-0">Featured Job</h6>
+                <h6 class="card-title mb-0">Recent Job</h6>
             </div>
 
             <div class="">
@@ -82,6 +82,7 @@
                     <small class="text-danger">{{ $errors->first('padding') }}</small>
                 </div>
             </div>
+
 
         </div>
 

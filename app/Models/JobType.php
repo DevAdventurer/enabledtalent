@@ -19,6 +19,10 @@ class JobType extends Model
         ];
     }
 
+    public function jobListings(){
+        return $this->hasMany(JobListing::class, 'job_type_id');
+    }
+
     public function getRouteKeyName(){
         return 'slug';
     }

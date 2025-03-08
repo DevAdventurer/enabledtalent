@@ -64,9 +64,9 @@ class CandidateRegisterController extends Controller
 
     public function redirectToGoogle(){
         config([
-            'services.google.client_id' => env('candidate_GOOGLE_CLIENT_ID'),
-            'services.google.client_secret' => env('candidate_GOOGLE_CLIENT_SECRET'),
-            'services.google.redirect' => env('candidate_GOOGLE_REDIRECT_URI'),
+            'services.google.client_id' => env('CANDIDATE_GOOGLE_CLIENT_ID'),
+            'services.google.client_secret' => env('CANDIDATE_GOOGLE_CLIENT_SECRET'),
+            'services.google.redirect' => env('CANDIDATE_GOOGLE_REDIRECT_URI'),
         ]);
 
         return Socialite::driver('google')->redirect();
@@ -75,9 +75,9 @@ class CandidateRegisterController extends Controller
     public function handleGoogleCallback(){
         try {
             config([
-                'services.google.client_id' => env('candidate_GOOGLE_CLIENT_ID'),
-                'services.google.client_secret' => env('candidate_GOOGLE_CLIENT_SECRET'),
-                'services.google.redirect' => env('candidate_GOOGLE_REDIRECT_URI'),
+                'services.google.client_id' => env('CANDIDATE_GOOGLE_CLIENT_ID'),
+                'services.google.client_secret' => env('CANDIDATE_GOOGLE_CLIENT_SECRET'),
+                'services.google.redirect' => env('CANDIDATE_GOOGLE_REDIRECT_URI'),
             ]);
 
             $googleUser = Socialite::driver('google')->stateless()->user();

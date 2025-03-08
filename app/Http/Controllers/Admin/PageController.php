@@ -120,7 +120,7 @@ class PageController extends Controller
                 'title' => $validatedData['title'] ?? '',
                 'description' => $validatedData['description'] ?? '',
             ],
-            'featured-job' => [
+            'recent-job' => [
                 'icon' => $validatedData['icon'] ?? '',
                 'title' => $validatedData['title'] ?? '',
                 'description' => $validatedData['description'] ?? '',

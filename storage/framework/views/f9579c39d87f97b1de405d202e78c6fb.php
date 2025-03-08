@@ -14,6 +14,7 @@
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
                            <li class="nav-item"><a class="nav-link" href="<?php echo e(route('web.home')); ?>">Home</a></li>
+                           <li class="nav-item"><a class="nav-link" href="<?php echo e(route('web.jobs')); ?>">Jobs</a></li>
                            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
                            <li class="nav-item"><a class="nav-link" href="#">Job Seekeers</a></li>
                            <li class="nav-item"><a class="nav-link" href="#">Employers</a></li>

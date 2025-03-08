@@ -9,7 +9,7 @@
                      @include("common.snippets.{$section->type}", ['content' => $section->content, 'section' => $section])
               @endif
        @endforeach
- @include('common.snippets.featured-job')
+ 
 {{--        @include('common.snippets.text-with-video')
        @include('common.snippets.partners-logo')
 

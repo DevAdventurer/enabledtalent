@@ -7692,3 +7692,11 @@ ul.user-profile-sidebar-list li ul li:after {
     object-fit: scale-down;
     border: 1px solid #eee;
 }
+.search-form-wrapper .form-control {
+  padding: 12px 10px 12px 35px !important; 
+}
+.search-form-wrapper .form-group{
+  margin-bottom: 0;
+  display: block;
+}
+

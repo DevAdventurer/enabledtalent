@@ -22,9 +22,10 @@ Route::controller(ComingSoonController::class)->name('web.')->group(function () 
     Route::get('common/qualification/list', 'qualificationList')->name('qualification.list');
 });
 
-Route::middleware('company.auth')->name('web.')->group(function() {
+Route::middleware('web')->name('web.')->group(function() {
     Route::controller(PageController::class)->group(function () {
         Route::get('/', 'home')->name('home');
+        Route::get('jobs', 'jobs')->name('jobs');
         Route::get('sign-in', 'signin')->name('signin');
         Route::get('page/{page}','page')->name('page');
     });
