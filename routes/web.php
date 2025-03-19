@@ -31,7 +31,7 @@ Route::middleware('web')->name('web.')->group(function() {
     });
 
     Route::controller(JobListingController::class)->name('job.')->prefix('job')->group(function () {
-        Route::get('/{job}', 'single')->name('single');
+        Route::get('/{job_listings}', 'single')->name('single');
         Route::get('category/{category}', 'category')->name('category');
     });
 

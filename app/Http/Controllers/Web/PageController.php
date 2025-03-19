@@ -53,4 +53,8 @@ class PageController extends Controller
 
         return view('web.job', compact('jobs'));
     }
+
+    public function jobDetails(Request $request, JobListing $job){
+        return $job;
+    }
 }

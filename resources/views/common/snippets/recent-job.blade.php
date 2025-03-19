@@ -71,7 +71,7 @@
                     <div class="row">
                         
                         <div class="col-lg-12 col-12 text-center">
-                            <div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">Apply now</div>
+                            <a class="btn btn-primary" href="{{route('web.job.single', $job->slug)}}">Apply now</a>
                         </div>
                     </div>
                 </div>

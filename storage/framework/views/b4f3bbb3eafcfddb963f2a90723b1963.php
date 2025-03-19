@@ -8,6 +8,7 @@
                      <?php echo $__env->make("common.snippets.{$section->type}", ['content' => $section->content, 'section' => $section], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
               <?php endif; ?>
        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+       <?php echo $__env->make('common.snippets.featured-category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
  
 
        
